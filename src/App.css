@@ -90,7 +90,7 @@
 .number-11 { transform: rotate(330deg); } .number-11 span { transform: rotate(-330deg); }
 .number-12 { padding-top: 15px; }
 
-/* 5. SOLID Pendulum */
+
 .clock-body {
   height: 200px;
   display: flex;
