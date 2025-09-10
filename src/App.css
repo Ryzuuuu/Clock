@@ -1,0 +1,144 @@
+
+.clock-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.grandfather-clock {
+  width: 360px;
+  
+  background: linear-gradient(145deg, #2c3e50, #1a2533);
+  
+  border: 1px solid #4a5a6a; 
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.clock-head {
+  padding-bottom: 20px;
+}
+
+
+.clock {
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #1f2937;
+  border: 1px solid #4a5a6a;
+  position: relative;
+  box-shadow: inset 0 0 25px rgba(0,0,0,0.5);
+}
+
+.clock-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-weight: 600;
+}
+
+
+.hand {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform-origin: 100% 50%;
+  border-radius: 3px;
+  transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.hour-hand { width: 28%; height: 5px; background: var(--color-text); }
+.min-hand { width: 40%; height: 3px; background: var(--color-text); }
+.second-hand { width: 45%; height: 2px; background: var(--color-primary); }
+
+.center-dot {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.number {
+  position: absolute; width: 100%; height: 100%;
+  text-align: center; font-size: 1.2rem;
+  opacity: 0.7;
+}
+.number span { display: inline-block; }
+.number-3, .number-6, .number-9, .number-12 { opacity: 1; }
+.number-1 { transform: rotate(30deg); } .number-1 span { transform: rotate(-30deg); }
+.number-2 { transform: rotate(60deg); } .number-2 span { transform: rotate(-60deg); }
+.number-3 { transform: rotate(90deg); } .number-3 span { transform: rotate(-90deg); }
+.number-4 { transform: rotate(120deg); } .number-4 span { transform: rotate(-120deg); }
+.number-5 { transform: rotate(150deg); } .number-5 span { transform: rotate(-150deg); }
+.number-6 { transform: rotate(180deg); } .number-6 span { transform: rotate(-180deg); }
+.number-7 { transform: rotate(210deg); } .number-7 span { transform: rotate(-210deg); }
+.number-8 { transform: rotate(240deg); } .number-8 span { transform: rotate(-240deg); }
+.number-9 { transform: rotate(270deg); } .number-9 span { transform: rotate(-270deg); }
+.number-10 { transform: rotate(300deg); } .number-10 span { transform: rotate(-300deg); }
+.number-11 { transform: rotate(330deg); } .number-11 span { transform: rotate(-330deg); }
+.number-12 { padding-top: 15px; }
+
+/* 5. SOLID Pendulum */
+.clock-body {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid #4a5a6a;
+  margin-top: 20px;
+}
+
+.pendulum {
+  width: 4px;
+  height: 90%;
+  background: linear-gradient(var(--color-text), var(--color-primary));
+  opacity: 0.8;
+  position: relative;
+  transform-origin: top center;
+  animation: swing 2s infinite ease-in-out;
+}
+
+.pendulum::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-text);
+}
+
+@keyframes swing {
+  0% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(-15deg); }
+}
+
+/* 6. Clean Digital Clock Display (No changes here) */
+.digital-clock {
+  margin-top: 25px;
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  color: var(--color-text);
+  text-shadow: 0 0 10px var(--color-primary);
+  opacity: 0.9;
+}
+
+.digital-clock span:not(:last-child) {
+  margin-right: 8px;
+}
