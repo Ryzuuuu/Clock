@@ -54,13 +54,13 @@ function App() {
           </div>
         </div>
 
-        {/* Clock Body with Pendulum */}
+        
         <div className="clock-body">
           <div className="pendulum"></div>
         </div>
       </div>
       
-      {/* Digital Display */}
+      
       <div className="digital-clock">
         <span>{formatTimeUnit(displayHours)}</span>:
         <span>{formatTimeUnit(minutes)}</span>:
