@@ -18,7 +18,7 @@ function App() {
   
   const milliseconds = time.getMilliseconds();
   
-  // Adjusted calculations for smoother hand movement
+  
   const secondsDegrees = ((seconds * 1000 + milliseconds) / 60000) * 360 + 90;
   const minutesDegrees = (minutes / 60) * 360 + (seconds / 60) * 6 + 90;
   const hoursDegrees = (hours / 12) * 360 + (minutes / 60) * 30 + 90;
@@ -30,7 +30,7 @@ function App() {
     <main className="clock-wrapper">
       <div className="grandfather-clock">
         
-        {/* Clock Head */}
+        
         <div className="clock-head">
           <div className="clock">
             <div className="clock-face">
